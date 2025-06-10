@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>génerateur de code GR/code barre</title>
+    <link rel="stylesheet" href="../stylesheet/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="boite"> 
+            <h1>générateur de code barre</h1>
+            <img src="" id="qr-code-img"/>
+            <input class="input" type="text" placeholder="Entréz URL pour générer le code QR">
+            <select id="link-type" onchange="changeInputMode()">
+                <option value="url">URL</option>
+                <option value="whatsapp">WHATSAPP</option>
+                <option value="facebook">FACEBOOk</option>
+                <option value="instagram">INSTAGRAM</option>
+                <option value="eleve">ELEVE</option>
+                <option value="etudiant">ETUDIANT</option>
+                <option value="fonctionnaire">fonctionnaire</option>
+                <option value="chauffeur">CHAUFFEUR</option>
+            </select>
+            <button class="generate-btn">Générer le code barre</button>
+        </div>
+    </div>
+    <script src="../javascript/javaqrcodeb.js"></script>
+</body>
+</html>
