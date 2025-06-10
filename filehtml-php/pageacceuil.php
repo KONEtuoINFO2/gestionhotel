@@ -41,7 +41,7 @@
         </div>
     </div>
 <!--directeur-->
-  <div class="cadre-c">
+  <div class="cadre-directeur" style=" display: none;">
         <div class="bar-navigation">
             <p style="background-color: orangered; border-radius: 0px 35px;">HRPK</p>
             <P>Directeur</P>
@@ -58,7 +58,7 @@
         </div>
     </div>
 <!--chef de reception-->
-  <div class="cadre-d">
+  <div class="cadre-d" style=" display: none;">
         <div class="bar-navigation">
             <p style="background-color: orangered; border-radius: 0px 35px;">HRPK</p>
             <P>Chef des reception</P>
@@ -88,7 +88,7 @@
         </div>
     </div>
 <!--receptionniste-->
-  <div class="cadre-e">
+  <div class="cadre-e" style=" display: none;">
         <div class="bar-navigation">
             <p style="background-color: orangered; border-radius: 0px 35px;">HRPK</p>
             <P>ESPACE D'APPLICATION</P>
@@ -116,7 +116,7 @@
         </div>
     </div>
 <!--maitre hotel-->
-  <div class="cadre-f">
+  <div class="cadre-f" style=" display: none;">
         <div class="bar-navigation">
             <p style="background-color: orangered; border-radius: 0px 35px;">HRPK</p>
             <P>ESPACE D'APPLICATION</P>
@@ -144,7 +144,7 @@
         </div>
     </div>
     <!--maitre de sport-->
-    <div class="cadre-g">
+    <div class="cadre-g" style=" display: none;">
         <div class="bar-navigation">
             <p style="background-color: orangered; border-radius: 0px 35px;">HRPK</p>
             <P>ESPACE DES SPORTS</P>
@@ -172,7 +172,7 @@
         </div>
     </div>
 <!--les formulaire des reservations-->
-  <div class="cadre-h">
+  <div class="cadre-h" style=" display: none;">
         <div class="bar-navigation">
             <p style="background-color: orangered; border-radius: 0px 35px;">HRPK</p>
             <P>ESPACE DES RESERVATIONS</P>
@@ -194,7 +194,7 @@
                 <option value="fonctionnaire">fonctionnaire</option>
                 <option value="chauffeur">CHAUFFEUR</option>
             </select>
-            <label for="">Date</label>:<input type="date" name="" value"" id "" require>
+            <label for="">Date</label>:<input type="date" name="" value="" id="" require>
             <label for="">type</label>: <select id="link-type" onchange="changeInputMode()">
                 <option value="url">URL</option>
                 <option value="whatsapp">WHATSAPP</option>
