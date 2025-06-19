@@ -35,13 +35,13 @@ header{
 }
 
 @media (max-width: 768px) {
-  .navbar {
+  nav {
     flex-direction: column;
     display: none;
     align-items: center;
   }
 
-  .navbar.show {
+  nav.show {
     display: flex;
   }
 
