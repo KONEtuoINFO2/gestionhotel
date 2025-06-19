@@ -13,15 +13,6 @@ header{
     padding: 30px 0 20px 0;
     text-align: center;
 }
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-  background-color: #f5f5f5;
-}
-
 .menu-toggle {
   display: none;
   font-size: 28px;
