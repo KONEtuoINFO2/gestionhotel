@@ -13,7 +13,14 @@
     <link rel="stylesheet" href="https://kit.fontawesome.com/a076d05399.js">
    <script src="./javascript/connexion.js"></script>
    <script src="./javascript/javanavbar.js"></script>
+<script>
+  const menuBtn = document.querySelector('.menu-toggle');
+  const navbar = document.querySelector('.navbar');
 
+  menuBtn.addEventListener('click', () => {
+    navbar.classList.toggle('show');
+  });
+</script>
 </head>
 <body>
       <header>
