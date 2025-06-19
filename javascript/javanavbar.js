@@ -1,7 +1,9 @@
-
-  const menuBtn = document.querySelector('.menu-toggle');
+// Afficher / masquer la navbar sur mobile
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleButton = document.querySelector('.menu-toggle');
   const navbar = document.querySelector('.navbar');
 
-  menuBtn.addEventListener('click', () => {
-    navbar.classList.toggle('show');
+  toggleButton.addEventListener('click', function () {
+    navbar.classList.toggle('active');
   });
+});
