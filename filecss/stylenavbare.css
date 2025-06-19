@@ -297,3 +297,65 @@ footer{
 footer a{
     color:white
 }
+
+
+
+/* Responsive navbar */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  margin: 10px;
+}
+
+/* Masquer la navigation sur mobile */
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    z-index: 99;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav a {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+  }
+}
+
+/* Responsive présentation générale */
+@media screen and (max-width: 768px) {
+  .presentation-generale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Responsive containers */
+@media screen and (max-width: 768px) {
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Formulaire responsive */
+@media screen and (max-width: 600px) {
+  .popup form {
+    width: 90%;
+  }
+}
