@@ -33,7 +33,7 @@ header{
     align-items: center;
   }
 
-  .navbar.show {
+  nav.show {
     display: flex;
   }
 
