@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://kit.fontawesome.com/a076d05399.js">
    <script src="./javascript/connexion.js"></script>
+   <script>
+  const menuBtn = document.querySelector('.menu-toggle');
+  const navbar = document.querySelector('nav');
+
+  menuBtn.addEventListener('click', () => {
+    navbar.classList.toggle('show');
+  });
+</script>
 </head>
 <body>
       <header>
