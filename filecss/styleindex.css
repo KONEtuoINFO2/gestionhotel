@@ -96,52 +96,7 @@ body {
       .navbar .logo.right {
         display: none;
       }
-      @media (max-width: 768px) {
-  .navbar {
-    position: relative;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-  }
-
-  .logo.right {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-
-  .toggle-btn {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: none;
-    border: none;
-    z-index: 3;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    width: 100%;
-    background-color: #fff;
-    display: none;
-    flex-direction: column;
-    z-index: 1;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-}
-
+      
     }
 
     header {
@@ -177,11 +132,59 @@ body {
     margin-top: 10px;
     
     border-radius: 20px; /* arrondi complet, à ajuster selon ton goût */
-  
-
-
-    /* ne pas écraser border-radius ici */
   }
+  .navbar {
+  position: relative;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+}
+
+.logo.right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 26px;
+  z-index: 4;
+}
+
+.nav-links {
+  position: absolute;
+  top: 60px; /* descend juste en dessous de la barre */
+  left: 0;
+  width: 100%;
+  background-color: white;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  z-index: 2;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
 
 }
 
