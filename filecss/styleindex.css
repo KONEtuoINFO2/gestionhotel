@@ -96,54 +96,7 @@ body {
       .navbar .logo.right {
         display: none;
       }
-    }
-
-    header {
-      background-color: #222;
-      color: #fff;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    .banniere {
-  background: linear-gradient(to right, #000000cc, #1e1e1ecc);
-  color: #fff;
-  height: 80px; /* hauteur fixe propre */
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.texte-defilant {
-  font-size: 1.2em;
-  position: absolute;
-  white-space: nowrap;
-  left: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: defilement 20s ease-in-out infinite alternate;
-}
-    @media (max-width: 768px) {
-  .navbar .logo,.navbar .logoright {
-    display: block;
-    margin-top: 10px;
-    
-    border-radius: 20px; /* arrondi complet, à ajuster selon ton goût */
-  
-
-
-    /* ne pas écraser border-radius ici */
-  }
-}
-
-
-    @keyframes defilement {
-      from { left: 100%; }
-      to { left: -100%; }
-    }
-    @media (max-width: 768px) {
+      @media (max-width: 768px) {
   .navbar {
     position: relative;
     height: 60px;
@@ -188,3 +141,53 @@ body {
     display: flex;
   }
 }
+
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .banniere {
+  background: linear-gradient(to right, #000000cc, #1e1e1ecc);
+  color: #fff;
+  height: 80px; /* hauteur fixe propre */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.texte-defilant {
+  font-size: 1.2em;
+  position: absolute;
+  white-space: nowrap;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: defilement 20s ease-in-out infinite alternate;
+}
+    @media (max-width: 768px) {
+  .navbar .logo,.navbar .logoright {
+    display: block;
+    margin-top: 10px;
+    
+    border-radius: 20px; /* arrondi complet, à ajuster selon ton goût */
+  
+
+
+    /* ne pas écraser border-radius ici */
+  }
+
+}
+
+
+    @keyframes defilement {
+      from { left: 100%; }
+      to { left: -100%; }
+    }
+    
