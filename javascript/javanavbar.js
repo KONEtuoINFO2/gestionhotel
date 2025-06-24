@@ -9,10 +9,15 @@ document.addEventListener('DOMContentLoaded', function () {
   
 });
 //-- JavaScript pour le menu hamburger --//
-
   function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("show");
+    const navLinks = document.getElementById("navLinks");
+    const toggleBtn = document.querySelector(".toggle-btn");
+    
+    navLinks.classList.toggle("show");
+    toggleBtn.classList.toggle("active"); // Ajout de l’état actif
   }
+
+
 
 
 

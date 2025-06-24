@@ -29,6 +29,20 @@ body {
   border-radius: 35px 0 35px 0; /* haut-droit et bas-gauche */
 
 }
+.toggle-btn.active::before {
+  content: "✖";
+}
+
+.toggle-btn::before {
+  content: "☰";
+}
+
+.toggle-btn {
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
 
     .toggle-btn {
