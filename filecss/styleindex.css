@@ -29,13 +29,16 @@ body {
   border-radius: 35px 0 35px 0; /* haut-droit et bas-gauche */
 
 }
+.toggle-btn::before {
+  content: "☰";
+  font-size: 26px;
+  color: #fff;
+}
+
 .toggle-btn.active::before {
   content: "✖";
 }
 
-.toggle-btn::before {
-  content: "☰";
-}
 
 .toggle-btn {
   font-size: 26px;
@@ -140,3 +143,48 @@ body {
       from { left: 100%; }
       to { left: -100%; }
     }
+    @media (max-width: 768px) {
+  .navbar {
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .logo.right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .toggle-btn {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    z-index: 3;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background-color: #fff;
+    display: none;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
