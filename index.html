@@ -1,176 +1,229 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hôtel Royal du Kafigue</title>
-    <link rel="stylesheet" href="./filecss/styleindex.css">
-    <link rel="stylesheet" href="./filecss/stylenavbare.css">
-     <link rel="stylesheet" href="./filecss/style.css">
-     <link rel="stylesheet" href="./filecss/connexion.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="https://kit.fontawesome.com/a076d05399.js">
-   <script src="./javascript/connexion.js"></script>
-   <script src="./javascript/javanavbar.js"></script>
+  <meta charset="UTF-8">
+  <title>Hôtel Royal du Kafigue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+    }
 
+    .navbar {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 10px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .navbar .logo {
+      font-weight: bold;
+      color: white;
+      background-color: orangered;
+      padding: 5px 20px;
+      border-radius: 0 35px 35px 0;
+    }
+
+    .navbar .logo.right {
+      background-color: green;
+      border-radius: 35px 0 0 35px;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 6px 12px;
+    }
+    section h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+
+    @media (max-width: 768px) {
+      .toggle-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        margin-top: 10px;
+        border-top: 1px solid #ddd;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .navbar .logo.right {
+        display: none;
+      }
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .banniere {
+      background: linear-gradient(to right, #000000cc, #1e1e1ecc);
+      color: #fff;
+      padding: 20px 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .texte-defilant {
+      font-size: 1.4em;
+      position: absolute;
+      white-space: nowrap;
+      animation: defilement 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes defilement {
+      from { left: 100%; }
+      to { left: -100%; }
+    }
+    @media (max-width: 768px) {
+  .navbar .logo.right {
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+  </style>
 </head>
 <body>
-      <header>
-  <h1>Bienvenue à l'Hôtel Royal du Kafigue</h1>
-  <p>Votre confort, notre priorité</p>
-    </header>
-
-<button class="menu-toggle">&#9776;</button> <!-- Menu mobile -->
 
 <nav class="navbar">
-  <a href="#" style="background-color: orangered; border-radius: 0px 35px; padding: 5px 35px;">HRK</a>
-  <a href="#">Accueil</a>
-  <a href="#">Chambres</a>
-  <a href="#">Services</a>
-  <a href="#">Contact</a>
-  <a href="#" class="user-non-active" id="openLoginPopup"><i class="fa-solid fa-circle-user"></i> Connexion</a>
-  <a href="index.html" class="user-active" id="actived"><i class="fas fa-user"></i> Deconnexion</a>
-  <a href="./filehtml-php/pageacceuil.php" class="user-active-admin" id="actived-admin"><i class="fas fa-user"></i> Menu-gestionaire</a>
-  <a href="#" style="background-color: green; border-radius: 35px 0px; padding: 5px 35px;">HRK</a>
+  <div class="logo">HRK</div>
+  <button class="toggle-btn" onclick="toggleMenu()">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="#">Accueil</a>
+    <a href="#">Chambres</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+    <a href="#" class="user-non-active" id="openLoginPopup"><i class="fa-solid fa-circle-user"></i> Connexion</a>
+    <a href="index.html" class="user-active" id="actived"><i class="fas fa-user"></i> Déconnexion</a>
+    <a href="./filehtml-php/pageacceuil.php" class="user-active-admin" id="actived-admin"><i class="fas fa-user"></i> Menu-gestionnaire</a>
+  </div>
+  <div class="logo right">HRK</div>
 </nav>
 
-     <!-- Formulaire de connexion -->
-    <div class="overlay" id="overlay"></div>
-    <div class="popup" id="loginPopup">
-        <span class="close" id="closeLoginPopup">&times;</span>
-        <form id="loginForm">
-            <label for="username">Nom d'utilisateur</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password" required>
-            <button type="button" onclick="submitLoginForm()">Connexion</button>
-        </form>
-        <button id="openSignupPopup">Créer un compte</button>
-        <button id="closeLoginPopup">Fermer</button>
-    </div>
+<header>
+  <h1>Bienvenue à l’Hôtel Royal du Kafigue</h1>
+  <p>Votre confort, notre priorité</p>
+</header>
 
-    <!-- Formulaire d'inscription -->
-    <div class="popup" id="signupPopup">
-        <span class="close" id="closeSignupPopup">&times;</span>
-        <form id="signupForm">
-            <label for="fullName">Nom complet</label>
-            <input type="text" id="fullName" name="fullName" required>
-            <label for="newUsername">Nom d'utilisateur</label>
-            <input type="text" id="newUsername" name="newUsername" required>
-            <label for="newPassword">Mot de passe</label>
-            <input type="password" id="newPassword" name="newPassword" required minlength="8">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            <label for="contact">Contact</label>
-            <input type="text" id="contact" name="contact" required maxlength="8">
-            <label for="address">Adresse</label>
-            <input type="text" id="address" name="address" required>
-            <label for="city">Ville</label>
-            <input type="text" id="city" name="city" required>
-            <label for="photo">Photo</label>
-            <input type="file" id="photo" name="photo" accept="image/*" required>
-            <button type="button" onclick="submitSignupForm()">Créer un compte</button>
-        </form>
+<div class="banniere">
+  <div class="texte-defilant">
+    Découvrez notre hôtel situé au cœur de la ville : confort, gastronomie et services personnalisés vous attendent.
+  </div>
+</div>
+<section id="services">
+  <h2>Nos Services</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+    <div style="background-color: #fff; padding: 20px; max-width: 300px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+      <h3>Chambres Élégantes</h3>
+      <p>Des chambres spacieuses avec climatisation, TV satellite, wifi gratuit et une literie haut de gamme.</p>
     </div>
+    <div style="background-color: #fff; padding: 20px; max-width: 300px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+      <h3>Restaurant Gastronomique</h3>
+      <p>Une cuisine raffinée inspirée des saveurs locales et internationales, servie dans un cadre chaleureux.</p>
+    </div>
+    <div style="background-color: #fff; padding: 20px; max-width: 300px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+      <h3>Service Premium</h3>
+      <p>Réception 24/7, navette aéroport, service en chambre et accueil personnalisé à votre arrivée.</p>
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+  <a href="#" style="display: inline-block; background-color: #8c5100; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Réserver Maintenant</a>
+</div>
 
-    <script src="./javascript/connexion.js"></script>
-   
+ </section>
 
-    <!--bande passante-->
-    <div class="annonce">
-        <marquee behavior="" direction=""> <h2>Découvrez notre hôtelSitué au cœur de la ville, l'Hôtel Royal du Kafigue
-             vous accueille dans un cadre chaleureux et raffiné. Profitez de nos chambres confortables,
-             de notre restaurant gastronomique et de nos services personnalisés pour un séjour inoubliable.</h2></marquee>
-    </div>
-    
-    <!--block1-->
-    <div class="presentation-generale">
-        <div class="pgh">
-            <h1>Le confort du kafigue</h1>
-            
-        </div>
-        <div class="pihc">
-             <h1>Nos belle chambres</h1>
-            
+<section id="galerie">
+  <h2>Galerie de l’Hôtel</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+    <img src="chambre.jpg" alt="Chambre confortable" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="restaurant.jpg" alt="Restaurant gastronomique" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="accueil.jpg" alt="Réception chaleureuse" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+  </div>
+</section>
+<section id="contact">
+  <h2>Contactez-nous</h2>
+  <form style="max-width: 500px; margin: auto; text-align: left;">
+    <label>Nom :</label><br>
+    <input type="text" name="nom" style="width: 100%; padding: 8px;"><br><br>
 
-        </div>
-        <div class="pgs">
-             <h1>nos restaurant gastronomique</h1>
-       
-        </div>
-        <div class="pgm">
-             <h1>nos séjour inoubliable</h1>
-       
-        </div>
-    </div>
-    <div class="main">
-        <div class="face">Les topes</div>
-        <div class="face">Les topes</div>
-        </div>
-    <div class="section">
-        <div class="vue-ensemble">Securité</div>
-        <div class="vue-ensembles">Securité</div>
+    <label>Email :</label><br>
+    <input type="email" name="email" style="width: 100%; padding: 8px;"><br><br>
 
-        </div>
-    <!--derniere partire-->
-    
- <div class="container">
-        <h2>Découvrez notre hôtel</h2>
-        <p>
-            Situé au cœur de la ville, l'Hôtel Royal du Kafigue vous accueille dans un cadre chaleureux et raffiné.
-             Profitez de nos chambres confortables, de notre restaurant gastronomique et de nos services personnalisés pour un séjour inoubliable.
-             <img src="./fileimages/images-a/chien.jpg" alt="">
-        </p>
-        <a href="#" class="cta-btn">Réserver maintenant</a>
-    </div>
-     <div class="container">
-        <h2>Découvrez notre hôtel</h2>
-        <p>
-            Situé au cœur de la ville, l'Hôtel Royal du Kafigue vous accueille dans un cadre chaleureux et raffiné. 
-            Profitez de nos chambres confortables, de notre restaurant gastronomique et de nos services personnalisés pour un séjour inoubliable.
+    <label>Message :</label><br>
+    <textarea name="message" rows="5" style="width: 100%; padding: 8px;"></textarea><br><br>
 
-            <img src="./fileimages/images-b/curitiba@2x.png" alt="" width="100%">
-        </p>
-        <a href="#" class="cta-btn">Réserver maintenant</a>
-    </div>
-     <div class="container">
-        <h2>Découvrez notre hôtel</h2>
-        <p>
-            Situé au cœur de la ville, l'Hôtel Royal du Kafigue vous accueille dans un cadre chaleureux et raffiné.
-             Profitez de nos chambres confortables, de notre restaurant gastronomique et de nos services personnalisés pour un séjour inoubliable.
-              <img src="./fileimages/images-b/curitiba@2x.png" alt="" width="100%">
-        </p>
-        <a href="#" class="cta-btn">Réserver maintenant</a>
-    </div>
-     <div class="container">
-        <h2>Découvrez notre hôtel</h2>
-        <p>
-            Situé au cœur de la ville, l'Hôtel Royal du Kafigue vous accueille dans un cadre chaleureux et raffiné.
-             Profitez de nos chambres confortables, de notre restaurant gastronomique et de nos services personnalisés pour un séjour inoubliable.
-              <img src="./fileimages/images-b/curitiba@2x.png" alt="" width="100%">
-        </p>
-        <a href="#" class="cta-btn">Réserver maintenant</a>
-    </div>
-     <div class="container">
-        <h2>Découvrez notre hôtel</h2>
-        <p>
-            Situé au cœur de la ville, l'Hôtel Royal du Kafigue vous accueille dans un cadre chaleureux et raffiné.
-             Profitez de nos chambres confortables, de notre restaurant gastronomique et de nos services personnalisés pour un séjour inoubliable.
-              <img src="./fileimages/images-b/curitiba@2x.png" alt="" width="100%">
-              <img src="./fileimages/images-b/curitiba@2x.png" alt="" width="100%">
-              <img src="./fileimages/images-b/curitiba@2x.png" alt="" width="100%">
-        </p>
-        <a href="#" class="cta-btn">Réserver maintenant</a>
-    </div>
-  <footer>
-     <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-             &copy; 2025 Hôtel Royal du Kafigue. Tous droits réservés.
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-       
-    </footer>
-    </div>
+    <button type="submit" style="background-color: #8c5100; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Envoyer</button>
+  </form>
+</section>
+
+<section id="localisation">
+  <h2>Nous trouver</h2>
+  <div style="width: 100%; max-width: 800px; margin: auto;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=REMPLACEZ_AVEC_VOTRE_CARTE"
+      width="100%" height="400" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+</section>
+<footer style="background-color: #222; color: #fff; padding: 40px 20px; text-align: center;">
+  <p style="font-size: 1.2em;"><strong>Hôtel Royal du Kafigue</strong><br>
+    Avenue des Orchidées, Djahakro, Côte d’Ivoire<br>
+    Tél: +225 01 23 45 67 89 | Email: contact@hotelkafigue.ci<br>
+    Ouvert 7j/7 • Réception 24h/24
+  </p>
+
+  <div style="margin: 20px 0;">
+    <a href="https://facebook.com/hotelkafigue" target="_blank">Facebook</a>
+    <a href="https://instagram.com/hotelkafigue" target="_blank">Instagram</a>
+    <a href="https://wa.me/2250123456789" target="_blank">WhatsApp</a>
+  </div>
+
+  <p style="font-size: 0.9em;">&copy; 2025 Hôtel Royal du Kafigue. Tous droits réservés.</p>
+</footer>
+
+<!-- JavaScript pour le menu hamburger -->
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+</script>
+
 </body>
 </html>
