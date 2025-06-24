@@ -6,10 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
     <link rel="stylesheet" href="./filecss/styleindex.css">
-    <link rel="stylesheet" href="./filecss/stylenavbare.css">
-     <link rel="stylesheet" href="./filecss/style.css">
      <link rel="stylesheet" href="./filecss/connexion.css">
     <link rel="stylesheet" href="https://kit.fontawesome.com/a076d05399.js">
    <script src="./javascript/connexion.js"></script>
@@ -24,14 +21,17 @@
   <div class="nav-links" id="navLinks">
     <a href="#">Accueil</a>
     <a href="#">Chambres</a>
+    <a href="#">Appropot de nous</a>
     <a href="#">Services</a>
     <a href="#">Contact</a>
+    <a href="#">Réservation</a>
     <a href="#" class="user-non-active" id="openLoginPopup"><i class="fa-solid fa-circle-user"></i> Connexion</a>
     <a href="index.html" class="user-active" id="actived"><i class="fas fa-user"></i> Déconnexion</a>
-    <a href="./filehtml-php/pageacceuil.php" class="user-active-admin" id="actived-admin"><i class="fas fa-user"></i> Menu-gestionnaire</a>
+    <a href="./filehtml-php/pageacceuil.html" class="user-active-admin" id="actived-admin"><i class="fas fa-user"></i> Menu-gestionnaire</a>
   </div>
   <div class="logoright">HRK</div>
 </nav>
+
 
 <header>
   <h1>Bienvenue à l’Hôtel Royal du Kafigue</h1>
@@ -40,9 +40,49 @@
 
 <div class="banniere">
   <div class="texte-defilant">
-    Découvrez notre hôtel situé au cœur du Kafigue a Sakplélé 20km de Sirasso : confort, gastronomie et services personnalisés vous attendent.
+    Découvrez notre hôtel situé au cœur du Kafigue a Sakplélé 20 km de Sirasso : confort, gastronomie et services personnalisés vous attendent.
   </div>
 </div>
+<!-- Formulaire de connexion -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="loginPopup">
+        <span class="close" id="closeLoginPopup">&times;</span>
+        <form id="loginForm">
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" required>
+            <button type="button" onclick="submitLoginForm()">Connexion</button>
+        </form>
+        <button id="openSignupPopup">Créer un compte</button>
+        <button id="closeLoginPopup">Fermer</button>
+    </div>
+
+    <!-- Formulaire d'inscription -->
+    <div class="popup" id="signupPopup">
+        <span class="close" id="closeSignupPopup">&times;</span>
+        <form id="signupForm">
+            <label for="fullName">Nom complet</label>
+            <input type="text" id="fullName" name="fullName" required>
+            <label for="newUsername">Nom d'utilisateur</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+            <label for="newPassword">Mot de passe</label>
+            <input type="password" id="newPassword" name="newPassword" required minlength="8">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="contact">Contact</label>
+            <input type="text" id="contact" name="contact" required maxlength="8">
+            <label for="address">Adresse</label>
+            <input type="text" id="address" name="address" required>
+            <label for="city">Ville</label>
+            <input type="text" id="city" name="city" required>
+            <label for="photo">Photo</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+            <button type="button" onclick="submitSignupForm()">Créer un compte</button>
+        </form>
+    </div>
+
+    <script src="./javascript/connexion.js"></script>
 <section id="services">
   <h2>Nos Services</h2>
   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
@@ -121,13 +161,5 @@
 
   <p style="font-size: 0.9em;">&copy; 2025 Hôtel Royal du Kafigue tuo. Tous droits réservés.</p>
 </footer>
-
-<!-- JavaScript pour le menu hamburger -->
-<script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("show");
-  }
-</script>
-
 </body>
 </html>

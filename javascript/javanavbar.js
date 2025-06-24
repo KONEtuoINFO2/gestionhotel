@@ -6,4 +6,13 @@ document.addEventListener('DOMContentLoaded', function () {
   toggleButton.addEventListener('click', function () {
     navbar.classList.toggle('active');
   });
+  
 });
+//-- JavaScript pour le menu hamburger --//
+
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+
+
+
