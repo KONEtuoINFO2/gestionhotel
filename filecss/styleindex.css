@@ -116,43 +116,32 @@ header {
     align-items: center;
   }
 
-  .logo{
-    position: absolute;
-    top: 10px;
-    padding: 5px 16px;
-    font-size: 14px;
-    border-radius: 30px;
-    color: white;
-    z-index: 3;
-    max-width: 10%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .logo.right {
-    position: relative;
-    top: 0%;
-    margin-right: 0%;
-    padding: 5px 16px;
-    font-size: 14px;
-    border-radius: 30px;
-    color: white;
-    z-index: 3;
-    max-width: 10%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
   .logo {
-    left: 10px;
-    background-color: orangered;
-  }
+  position: absolute;
+  top: 10px;
+  right: 80%;
+  background-color: orangered;
+  color: white;
+  font-size: 14px;
+  padding: 5px 16px;
+  border-radius: 30px;
+  max-width: 30%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-  .logo.right {
-    right: 0px;
-    background-color: green;
-  }
+.logo.right {
+  position: absolute;
+  top: 10px;
+  right: 5%;
+  background-color: green; /* ✅ juste une seule couleur */
+  padding: 5px 16px;
+  border-radius: 30px;
+  color: white;
+  font-size: 14px;
+
+}
 
   .toggle-btn {
     display: block;
