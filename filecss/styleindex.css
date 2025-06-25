@@ -1,34 +1,42 @@
+/* Global Styles */
 body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
-    }
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+}
 
-    .navbar {
-      background-color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 10px 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
+.navbar {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
 
-    .navbar .logo {
+.navbar .logo {
   background-color: orangered;
   color: white;
   padding: 5px 35px;
-  border-radius: 0 35px 0 35px; /* haut-droit et bas-gauche */
+  border-radius: 0 35px 0 35px; /* haut-droit & bas-gauche */
 }
 
-
-.navbar .logoright {
+.navbar .logo.right {
   background-color: green;
   color: white;
   padding: 5px 35px;
-  border-radius: 35px 0 35px 0; /* haut-droit et bas-gauche */
-
+  border-radius: 35px 0 35px 0; /* haut-gauche & bas-droit */
 }
+
+.toggle-btn {
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
 .toggle-btn::before {
   content: "☰";
   font-size: 26px;
@@ -39,77 +47,30 @@ body {
   content: "✖";
 }
 
-
-.toggle-btn {
-  font-size: 26px;
-  background: none;
-  border: none;
-  cursor: pointer;
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 6px 12px;
+}
 
-    .toggle-btn {
-      background: none;
-      border: none;
-      font-size: 24px;
-      cursor: pointer;
-      display: none;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      padding: 6px 12px;
-    }
-    section h2 {
+section h2 {
   text-align: center;
   font-size: 2em;
   margin-bottom: 20px;
 }
 
-
-    @media (max-width: 768px) {
-      .toggle-btn {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #fff;
-        margin-top: 10px;
-        border-top: 1px solid #ddd;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .navbar .logo.right {
-        display: none;
-      }
-      
-    }
-
-    header {
-      background-color: #222;
-      color: #fff;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    .banniere {
+/* Bannière Défilante */
+.banniere {
   background: linear-gradient(to right, #000000cc, #1e1e1ecc);
   color: #fff;
-  height: 80px; /* hauteur fixe propre */
+  height: 80px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -124,73 +85,74 @@ body {
   left: 100%;
   top: 50%;
   transform: translateY(-50%);
-  animation: defilement 20s ease-in-out infinite alternate;
+  animation: defilement 20s linear infinite;
 }
-    @media (max-width: 768px) {
-  .navbar .logo,.navbar .logoright {
-    display: block;
-    margin-top: 10px;
-    
-    border-radius: 20px; /* arrondi complet, à ajuster selon ton goût */
-  }
+
+@keyframes defilement {
+  from { left: 100%; }
+  to { left: -100%; }
+}
+
+header {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
   .navbar {
-  position: relative;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #333;
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+  }
+
+  .navbar .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 0 35px 0 35px;
+    z-index: 3;
+  }
+
+  .navbar .logo.right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 35px 0 35px 0;
+    z-index: 3;
+  }
+
+  .toggle-btn {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    color: white;
+    z-index: 4;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 2;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
 }
-
-.logo {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 3;
-}
-
-.logo.right {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 3;
-}
-
-.toggle-btn {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: none;
-  border: none;
-  color: white;
-  font-size: 26px;
-  z-index: 4;
-}
-
-.nav-links {
-  position: absolute;
-  top: 60px; /* descend juste en dessous de la barre */
-  left: 0;
-  width: 100%;
-  background-color: white;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-  z-index: 2;
-}
-
-.nav-links.show {
-  display: flex;
-}
-
-
-}
-
-
-    @keyframes defilement {
-      from { left: 100%; }
-      to { left: -100%; }
-    }
-    
