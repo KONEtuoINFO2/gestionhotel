@@ -9,13 +9,23 @@ document.addEventListener('DOMContentLoaded', function () {
   
 });
 //-- JavaScript pour le menu hamburger --//
+ 
+  
   function toggleMenu() {
     const navLinks = document.getElementById("navLinks");
-    const toggleBtn = document.querySelector(".toggle-btn");
-    
+    const toggleBtn = document.getElementById("menuToggleBtn");
+
     navLinks.classList.toggle("show");
-    toggleBtn.classList.toggle("active"); // Ajout de l’état actif
+
+    // Change icon
+    if (navLinks.classList.contains("show")) {
+      toggleBtn.textContent = "✖";
+    } else {
+      toggleBtn.textContent = "☰";
+    }
   }
+
+
 
 
 
