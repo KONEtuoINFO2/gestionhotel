@@ -10,17 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 //-- JavaScript pour le menu hamburger --//
   function toggleMenu() {
-    const navLinks = document.getElementById("navLinks");
-    const toggleBtn = document.getElementById("menuToggleBtn");
-
-    navLinks.classList.toggle("show");
-
-    // Change icon
-    if (navLinks.classList.contains("show")) {
-      toggleBtn.textContent = "✖";
-    } else {
-      toggleBtn.textContent = "☰";
-    }
+    const nav = document.getElementById('navLinks');
+    const btn = document.getElementById('menuToggleBtn');
+    nav.classList.toggle('show');
+    btn.classList.toggle('active');
   }
 
 

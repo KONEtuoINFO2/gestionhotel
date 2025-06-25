@@ -1,11 +1,10 @@
-/* ========= BASE ========= */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #f4f4f4;
 }
 
-/* ========= NAVBAR DESKTOP ========= */
+/* === NAVBAR === */
 .navbar {
   background-color: #fff;
   display: flex;
@@ -14,34 +13,39 @@ body {
   flex-wrap: wrap;
   padding: 10px 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.logo,
+.logo.right {
+  color: white;
+  padding: 5px 35px;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 .logo {
   background-color: orangered;
-  color: white;
-  padding: 5px 35px;
   border-radius: 0 35px 0 35px;
 }
 
 .logo.right {
   background-color: green;
-  color: white;
-  padding: 5px 35px;
   border-radius: 35px 0 35px 0;
 }
 
-/* ========= TOGGLE BUTTON ========= */
 .toggle-btn {
   font-size: 26px;
   background: none;
   border: none;
   cursor: pointer;
   display: none;
+  z-index: 3;
 }
 
 .toggle-btn::before {
   content: "☰";
-  font-size: 26px;
   color: white;
 }
 
@@ -49,7 +53,6 @@ body {
   content: "✖";
 }
 
-/* ========= NAV LINKS ========= */
 .nav-links {
   display: flex;
   flex-wrap: wrap;
@@ -63,122 +66,46 @@ body {
   padding: 6px 12px;
 }
 
-/* ========= SECTION ========= */
-section h2 {
-  text-align: center;
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-/* ========= BANNIERE ========= */
-.banniere {
-  background: linear-gradient(to right, #000000cc, #1e1e1ecc);
-  color: #fff;
-  height: 80px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.texte-defilant {
-  font-size: 1.2em;
-  position: absolute;
-  white-space: nowrap;
-  left: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: defilement 20s linear infinite;
-}
-
-@keyframes defilement {
-  from { left: 100%; }
-  to { left: -100%; }
-}
-
-/* ========= HEADER ========= */
-header {
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* ========= RESPONSIVE: MOBILE ========= */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #fff;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
   .toggle-btn {
-    font-size: 24px;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
+    display: block;
   }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Aligne rouge - burger - vert */
-  background-color: #333;
-  padding: 10px 16px;
-}
-
-.logo, .logo.right {
-  background-color: orangered;
-  color: white;
-  padding: 6px 14px;
-  border-radius: 25px;
-  font-weight: bold;
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-.logo.right {
-  background-color: green;
-}
-
-.toggle-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-}
-  .toggle-btn::before {
-    content: "☰";
-  }
-  .toggle-btn.active::before {
-    content: "✖";
-  }
-
 
   .nav-links {
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: white;
-    display: none;
+    background-color: #fff;
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
+    display: none;
     z-index: 2;
   }
 
   .nav-links.show {
     display: flex;
+  }
+
+  .navbar {
+    background-color: #333;
+  }
+
+  .logo,
+  .logo.right {
+    background-color: orangered;
+    border-radius: 25px;
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+
+  .logo.right {
+    background-color: green;
+  }
+
+  .toggle-btn::before {
+    color: white;
   }
 }
