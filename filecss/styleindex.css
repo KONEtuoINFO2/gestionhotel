@@ -108,53 +108,41 @@ header {
 /* ========= RESPONSIVE: MOBILE ========= */
 @media (max-width: 768px) {
   .navbar {
-    position: relative;
-    height: 60px;
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Aligne rouge - burger - vert */
+  background-color: #333;
+  padding: 10px 16px;
+}
 
-  .logo {
-  position: absolute;
-  top: 10px;
-  right: 80%;
+.logo, .logo.right {
   background-color: orangered;
   color: white;
+  padding: 6px 14px;
+  border-radius: 25px;
+  font-weight: bold;
   font-size: 14px;
-  padding: 5px 16px;
-  border-radius: 30px;
-  max-width: 30%;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .logo.right {
-  position: absolute;
-  top: 10px;
-  right: 20%;
-  background-color: green; /* ✅ juste une seule couleur */
-  padding: 5px 16px;
-  border-radius: 30px;
-  color: white;
-  font-size: 14px;
-
+  background-color: green;
 }
 
-  .toggle-btn {
-    display: block;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: none;
-    border: none;
-    color: white;
-    font-size: 26px;
-    z-index: 4;
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+  .toggle-btn::before {
+    content: "☰";
   }
+  .toggle-btn.active::before {
+    content: "✖";
+  }
+
 
   .nav-links {
     position: absolute;
