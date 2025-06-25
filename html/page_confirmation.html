@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirmation</title>
+  <style>
+    body {
+      background-color: #f7f7f7;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .message {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .message h1 {
+      color: orangered;
+      margin-bottom: 20px;
+    }
+
+    .message p {
+      font-size: 1.1em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    <h1>🎉 Merci pour votre réservation !</h1>
+    <p>Nous vous contacterons bientôt pour confirmer les détails.</p>
+  </div>
+  <script>
+  document.querySelector("form").addEventListener("submit", function(e) {
+    const nom = document.getElementById("nom").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const arrivee = document.getElementById("date-arrivee").value;
+    const depart = document.getElementById("date-depart").value;
+    const type = document.getElementById("type-chambre").value;
+
+    if (!nom || !email || !arrivee || !depart || !type) {
+      alert("Merci de remplir tous les champs obligatoires !");
+      e.preventDefault(); // empêche l’envoi
+    }
+  });
+</script>
+
+</body>
+</html>

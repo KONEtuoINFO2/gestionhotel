@@ -1,0 +1,60 @@
+CREATE TABLE reservations (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nom VARCHAR(100),
+  email VARCHAR(100),
+  date_arrivee DATE,
+  date_depart DATE,
+  type_chambre VARCHAR(50),
+  message TEXT,
+  date_envoi TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE admins (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(100) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL
+);
+<tr>
+  <td><?= htmlspecialchars($r['nom']) ?></td>
+  <td><?= htmlspecialchars($r['email']) ?></td>
+  <td><?= $r['date_arrivee'] ?></td>
+  <td><?= $r['date_depart'] ?></td>
+  <td><?= htmlspecialchars($r['type_chambre']) ?></td>
+  <td><?= nl2br(htmlspecialchars($r['message'])) ?></td>
+  <td><?= $r['date_envoi'] ?></td>
+  <td>
+    <a href="modifier-reservation.php?id=<?= $r['id'] ?>">✏️</a>
+    <a href="supprimer-reservation.php?id=<?= $r['id'] ?>" onclick="return confirm('Supprimer cette réservation ?')">🗑️</a>
+  </td>
+</tr>
+
+// Statistiques
+$stats = $pdo->query("
+  SELECT 
+    COUNT(*) AS total,
+    SUM(type_chambre = 'simple') AS simples,
+    SUM(type_chambre = 'double') AS doubles,
+    SUM(type_chambre = 'suite') AS suites
+")->fetch();
+
+<div class="stats">
+  <div>📦 Total : <strong><?= $stats['total'] ?></strong></div>
+  <div>🛏️ Simples : <?= $stats['simples'] ?></div>
+  <div>🛏️ Doubles : <?= $stats['doubles'] ?></div>
+  <div>🛏️ Suites : <?= $stats['suites'] ?></div>
+</div>
+
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stats div {
+  background-color: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}

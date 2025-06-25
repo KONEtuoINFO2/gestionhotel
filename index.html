@@ -128,6 +128,36 @@
     <img src="./fileimages/images-a/chien.jpg" alt="Réception chaleureuse" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
   </div>
 </section>
+<section class="reservation">
+  <h2>Réservez votre chambre</h2>
+  <form action="traitement-reservation.php" method="POST">
+    <label for="nom">Nom complet :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="email">Adresse e-mail :</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="date-arrivee">Date d’arrivée :</label>
+    <input type="date" id="date-arrivee" name="date_arrivee" required>
+
+    <label for="date-depart">Date de départ :</label>
+    <input type="date" id="date-depart" name="date_depart" required>
+
+    <label for="type-chambre">Type de chambre :</label>
+    <select id="type-chambre" name="type_chambre" required>
+      <option value="">-- Choisir --</option>
+      <option value="simple">Simple</option>
+      <option value="double">Double</option>
+      <option value="suite">Suite</option>
+    </select>
+
+    <label for="message">Message (facultatif) :</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+
+    <button type="submit">Réserver</button>
+  </form>
+</section>
+
 
 <section id="contact">
   <h2>Contactez-nous</h2>
