@@ -54,6 +54,8 @@ $reservations = $pdo->query($sql);
   </style>
 </head>
 <body>
+    <a href="logout.php" style="float:right; margin-bottom:10px;">🔓 Déconnexion</a>
+
 
 <h1>Liste des Réservations</h1>
 

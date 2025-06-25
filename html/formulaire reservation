@@ -60,3 +60,15 @@
 
 <canvas id="camembert" width="300" height="300" style="margin: 0 auto; display: block;"></canvas>
 
+<button id="afficherFormulaire">📅 Réserver une chambre</button>
+<div id="formulaireReservation" style="display: none;">
+  <!-- Ton formulaire ici -->
+</div>
+<script>
+  const bouton = document.getElementById("afficherFormulaire");
+  const formulaire = document.getElementById("formulaireReservation");
+
+  bouton.addEventListener("click", function () {
+    formulaire.style.display = formulaire.style.display === "none" ? "block" : "none";
+  });
+</script>
