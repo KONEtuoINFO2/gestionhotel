@@ -110,6 +110,9 @@ header {
   .navbar {
     position: relative;
     height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #333;
   }
 
@@ -117,21 +120,25 @@ header {
   .logo.right {
     position: absolute;
     top: 10px;
-    padding: 6px 20px;
+    padding: 6px 18px;
     font-size: 14px;
+    border-radius: 25px; /* ✅ arrondis en forme de pastille */
+    max-width: 35%;
+    text-align: center;
+    box-sizing: border-box;
     color: white;
-    border-radius: 30px;
-    z-index: 2;
   }
 
   .logo {
     left: 10px;
     background-color: orangered;
+    z-index: 3;
   }
 
   .logo.right {
     right: 10px;
     background-color: green;
+    z-index: 3;
   }
 
   .toggle-btn {
@@ -142,9 +149,9 @@ header {
     transform: translateX(-50%);
     background: none;
     border: none;
-    font-size: 26px;
     color: white;
-    z-index: 3;
+    font-size: 26px;
+    z-index: 4;
   }
 
   .nav-links {
@@ -152,10 +159,10 @@ header {
     top: 70px;
     left: 0;
     width: 100%;
+    background-color: white;
     display: none;
     flex-direction: column;
     align-items: center;
-    background: #fff;
     padding: 15px 0;
     z-index: 1;
   }
