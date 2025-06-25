@@ -109,7 +109,7 @@ header {
 @media (max-width: 768px) {
   .navbar {
     position: relative;
-    height: 70px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,27 +118,28 @@ header {
 
   .logo,
   .logo.right {
-    position: absolute;
-    top: 10px;
-    padding: 6px 18px;
-    font-size: 14px;
-    border-radius: 25px; /* ✅ arrondis en forme de pastille */
-    max-width: 35%;
-    text-align: center;
+    padding: 5px 20px;
+    font-size: 16px;
+    max-width: 40%;
     box-sizing: border-box;
-    color: white;
   }
 
   .logo {
+    position: absolute;
+    top: 10px;
     left: 10px;
-    background-color: orangered;
     z-index: 3;
+    border-radius: 0 35px 0 35px;
+    background-color: orangered;
   }
 
   .logo.right {
+    position: absolute;
+    top: 10px;
     right: 10px;
-    background-color: green;
     z-index: 3;
+    border-radius: 35px 0 35px 0;
+    background-color: green;
   }
 
   .toggle-btn {
@@ -156,19 +157,18 @@ header {
 
   .nav-links {
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: white;
     display: none;
     flex-direction: column;
     align-items: center;
-    padding: 15px 0;
-    z-index: 1;
+    padding: 20px 0;
+    z-index: 2;
   }
 
   .nav-links.show {
     display: flex;
   }
 }
-
