@@ -134,13 +134,11 @@ header {
   right: 10px;
   padding: 5px 20px;
   font-size: 16px;
-  border-radius: 35px 0 35px 0;
+  border-radius: 35px ;
   background-color: green;
   color: white;
   z-index: 3;
 }
-
-
   .toggle-btn {
     display: block;
     position: absolute;
