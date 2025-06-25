@@ -41,7 +41,7 @@ body {
 
 .toggle-btn::before {
   content: "☰";
-  font-size: 26px;
+  
   color: white;
 }
 
@@ -107,72 +107,44 @@ header {
 
 /* ========= RESPONSIVE: MOBILE ========= */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #fff;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
   .toggle-btn {
-    font-size: 24px;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
+    display: block;
   }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Aligne rouge - burger - vert */
-  background-color: #333;
-  padding: 10px 16px;
-}
-
-.logo, .logo.right {
-  background-color: orangered;
-  color: white;
-  padding: 6px 14px;
-  border-radius: 25px;
-  font-weight: bold;
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-.logo.right {
-  background-color: green;
-}
-
-.toggle-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-}
-
 
   .nav-links {
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: white;
-    display: none;
+    background-color: #fff;
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
+    display: none;
     z-index: 2;
   }
 
   .nav-links.show {
     display: flex;
+  }
+
+  .navbar {
+    background-color: #333;
+  }
+
+  .logo,
+  .logo.right {
+    background-color: orangered;
+    border-radius: 25px;
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+
+  .logo.right {
+    background-color: green;
+  }
+
+  .toggle-btn::before {
+    color: white;
   }
 }
