@@ -107,6 +107,27 @@ header {
 
 /* ========= RESPONSIVE: MOBILE ========= */
 @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .toggle-btn {
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
   .navbar {
   display: flex;
   align-items: center;
