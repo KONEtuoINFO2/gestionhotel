@@ -136,6 +136,14 @@ header {
   color: white;
   cursor: pointer;
 }
+  .toggle-btn::before {
+    content: "☰";
+  }
+  .toggle-btn.active::before {
+    content: "✖";
+  }
+
+
   .nav-links {
     position: absolute;
     top: 60px;
@@ -151,25 +159,5 @@ header {
 
   .nav-links.show {
     display: flex;
-  }
-}
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #fff;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .toggle-btn {
-    font-size: 24px;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
   }
 }
