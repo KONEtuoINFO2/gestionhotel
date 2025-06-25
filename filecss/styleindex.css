@@ -134,7 +134,7 @@ header {
 .logo.right {
   position: absolute;
   top: 10px;
-  right: 10%;
+  right: 20%;
   background-color: green; /* ✅ juste une seule couleur */
   padding: 5px 16px;
   border-radius: 30px;
