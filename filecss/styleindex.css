@@ -110,41 +110,36 @@ header {
   .navbar {
     position: relative;
     height: 60px;
+    background-color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333;
+  }
+
+  .logo,
+  .logo.right {
+    position: absolute;
+    top: 10px;
+    padding: 5px 16px;
+    font-size: 14px;
+    border-radius: 30px;
+    color: white;
+    z-index: 3;
+    max-width: 40%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .logo {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 5px 20px;
-  font-size: 16px;
-  border-radius:  35px;
-  background-color: orangered;
-  color: white;
-  z-index: 3;
-  max-width: 100px;
-}
+    left: 10px;
+    background-color: orangered;
+  }
 
-.logo.right {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 5px 14px;
-  font-size: 14px;
-  border-radius: 35px;
-  background-color: green;
-  color: white;
-  z-index: 3;
-
-  max-width: 100px;   /* ✅ Limite la largeur totale */
-  overflow: hidden;   /* Coupe le contenu s’il dépasse */
-  text-overflow: ellipsis; /* Ajoute "..." si trop long */
-  white-space: nowrap;
-}
+  .logo.right {
+    right: 10px;
+    background-color: green;
+  }
 
   .toggle-btn {
     display: block;
