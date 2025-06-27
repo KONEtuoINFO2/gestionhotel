@@ -1,14 +1,15 @@
 // Ouverture du formulaire de reservation
 document.addEventListener('DOMContentLoaded', () => {
- 
-document.getElementById('Ouvertform').addEventListener('click', function() {
-    document.getElementById('reservations').style.display = 'block';
-    document.getElementById('reservations').style.display = 'none';
+   console.log('tuo');
+document.getElementById('openForm').addEventListener('click', function() {
+    document.getElementById('Form').style.display = 'block';
+    console.log('tuo');
+    
 });
-
-/* Fermeture du formulaire
+  console.log('tuo');
+// Fermeture du formulaire
 document.getElementById('closeform').addEventListener('click', function() {
     document.getElementById('reservation').style.display = 'none';
     document.getElementById('reservation').style.display = 'none';
-});*/
+});
 })
