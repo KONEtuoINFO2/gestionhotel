@@ -172,7 +172,7 @@ header {
 }
 /* ========= reservation ========= */  
 .reservation {
-  display: none;
+  display: block;
   background-color: #fff;
   padding: 40px 20px;
   max-width: 600px;
