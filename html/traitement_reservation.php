@@ -37,6 +37,6 @@ $message_admin = "Une nouvelle réservation a été effectuée :\n\nNom : $nom\n
 mail($admin_email, $subject_admin, $message_admin);
 
 // Redirection vers la page de confirmation
-header("Location: confirmation.html");
-exit();
+header("Location: page_confirmation.html");
+exit("../index.html");
 ?>

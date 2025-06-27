@@ -2,11 +2,14 @@
 document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('openForm').addEventListener('click', function() {
     document.getElementById('Form').style.display = 'block';
+
 });
-  console.log('tuo');
+document.getElementById('openFormlaire').addEventListener('click', function() {
+    document.getElementById('Form').style.display = 'block';
+
+});
 // Fermeture du formulaire
 document.getElementById('closeform').addEventListener('click', function() {
-    document.getElementById('reservation').style.display = 'none';
-    document.getElementById('reservation').style.display = 'none';
+    document.getElementById('Form').style.display = 'none';
 });
 })
