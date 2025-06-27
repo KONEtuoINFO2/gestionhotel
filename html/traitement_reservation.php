@@ -38,5 +38,5 @@ mail($admin_email, $subject_admin, $message_admin);
 
 // Redirection vers la page de confirmation
 header("Location: page_confirmation.html");
-exit("../index.html");
+exit();
 ?>
