@@ -172,7 +172,7 @@ header {
 }
 /* ========= reservation ========= */  
 .reservation {
-  display: block;
+  display:none;
   background-color: #fff;
   padding: 40px 20px;
   max-width: 600px;
@@ -209,7 +209,7 @@ header {
   font-family: inherit;
 }
 
-.reservation button,span {
+.reservation button {
   background-color: #8c5100;
   color: #fff;
   padding: 12px;
@@ -221,11 +221,11 @@ header {
   transition: background-color 0.3s ease;
 }
 
-.reservation span:hover, button:hover {
+.reservation button:hover {
   background-color: #d43f00;
 }
 
-.reservation span {
+.reservation button.close-reservation {
   position:relative;
   left: 40%;
   background-color: #8c5100;

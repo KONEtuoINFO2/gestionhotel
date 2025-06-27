@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://kit.fontawesome.com/a076d05399.js">
    <script src="./javascript/connexion.js"></script>
    <script src="./javascript/javanavbar.js"></script>
+   <script src="./javascript/form_reservation.js"></script>
+
   
 </head>
 <body>
@@ -26,7 +28,7 @@
     <a href="#">À propos</a>
     <a href="#">Services</a>
     <a href="#">Contact</a>
-    <a href="#">Réservation</a>
+    <a href="javascript:void(0)" id="Ouvertform">Réservation</a>
     <a href="#" class="user-non-active" id="openLoginPopup">
       <i class="fa-solid fa-circle-user"></i> Connexion
     </a>
@@ -52,9 +54,9 @@
   </div>
 </div>
 <!--formulaire de reservation-->
-<section class="reservation" id="oppen-reservation">
+<section class="reservation" id="reservations">
     
-   <span class="close-reservation" id="closeSignupPopup">&times;</span>
+   <button  class="close-reservation" id="closereservation">&times;</button>
       <h2>Réservez votre chambre</h2>
   <form action="traitement-reservation.php" method="POST">
     
@@ -81,7 +83,7 @@
     <label for="message">Message (facultatif) :</label>
     <textarea id="message" name="message" rows="4"></textarea>
 
-    <button type="submit">Réserver</button>
+    <button type="submit" class="btn">Réserver</button>
   </form>
 </section>
 <!-- Formulaire de connexion -->
@@ -140,7 +142,7 @@
       <p>Réception 24/7, navette aéroport, service en chambre et accueil personnalisé à votre arrivée.</p>
     </div>
     <div style="text-align: center; margin-top: 30px;">
-  <a href="javascript:void(0)" id="" class="popup-exit" style="display: inline-block; background-color: #8c5100; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Réserver Maintenant</a>
+  <a href="javascript:void(0)" id="Ouvertform" style="display: inline-block; background-color: #8c5100; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Réserver Maintenant</a>
 </div>
 
  </section>
