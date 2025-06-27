@@ -170,6 +170,22 @@ header {
     color: white;
   }
 }
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+    max-height: none !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    position: static;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .toggle-btn {
+    display: none !important;
+  }
+}
 /* ========= reservation ========= */  
 .reservation {
   display:none;
