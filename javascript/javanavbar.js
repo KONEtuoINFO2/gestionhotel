@@ -17,3 +17,11 @@ function toggleMenu() {
     };
   });
 }
+
+  function changerVitesseBanniere(duree) {
+    const texte = document.getElementById('banniereTexte');
+    texte.style.animationDuration = duree + 's';
+  }
+
+  // Exemple : ralentir à 40 secondes
+  changerVitesseBanniere(40);
