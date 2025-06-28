@@ -95,7 +95,7 @@ section h2 {
 
 .texte-defilante {
   display: flex;
-  animation: defilement 60s linear infinite;
+  animation: defilement 40s linear infinite;
   will-change: transform;
 }
 
