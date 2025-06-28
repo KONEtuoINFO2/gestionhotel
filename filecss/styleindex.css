@@ -81,6 +81,8 @@ section h2 {
 }
 
 /* ========= BANNIERE ========= */
+
+
 .banniere {
   background: linear-gradient(to right, #000000cc, #1e1e1ecc);
   color: #fff;
@@ -93,15 +95,14 @@ section h2 {
 
 .texte-defilante {
   display: flex;
-  width: max-content;
-  animation: defilement 40s linear infinite;
+  animation: defilement 60s linear infinite;
   will-change: transform;
 }
 
 .texte-defilante span {
   white-space: nowrap;
   font-size: 1.2em;
-  padding-right: 100px; /* espace entre les deux phrases */
+  padding-right: 100px; /* Espace entre les deux copies du texte */
 }
 
 @keyframes defilement {
