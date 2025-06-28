@@ -112,25 +112,6 @@ section h2 {
     transform: translateX(-50%);
   }
 }
-
-.nav-links {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-}
-
-.nav-links.show {
-  max-height: 500px; /* Ajustable selon le contenu */
-}
-
-
-
-
-@keyframes defilement {
-  from { left: 100%; }
-  to { left: -100%; }
-}
-
 /* ========= HEADER ========= */
 header {
   background-color: #222;
