@@ -99,11 +99,9 @@ section h2 {
   left: 100%;
   top: 50%;
   transform: translateY(-50%);
-  animation: defilement 2ms linear infinite;
+  animation: defilement 20s linear infinite;
 }
-.texte-defilant {
-  will-change: transform;
-}
+
 .nav-links {
   max-height: 0;
   overflow: hidden;
