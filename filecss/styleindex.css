@@ -85,31 +85,21 @@ section h2 {
   background: linear-gradient(to right, #000000cc, #1e1e1ecc);
   color: #fff;
   height: 80px;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .texte-defilant {
+  font-size: 1.2em;
   position: absolute;
   white-space: nowrap;
-  font-size: 1.2em;
+  left: 100%;
   top: 50%;
   transform: translateY(-50%);
-  animation: defilement 25s linear infinite;
-  will-change: transform;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-}
-
-@keyframes defilement {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+  animation: defilement 10s linear infinite;
 }
 
 .nav-links {
