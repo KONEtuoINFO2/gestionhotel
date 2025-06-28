@@ -99,7 +99,7 @@ section h2 {
   left: 100%;
   top: 50%;
   transform: translateY(-50%);
-  animation: defilement 60s linear infinite;
+  animation: defilement  linear infinite;
 }
 .nav-links {
   max-height: 0;
