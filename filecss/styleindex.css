@@ -101,6 +101,36 @@ section h2 {
   transform: translateY(-50%);
   animation: defilement 10s linear infinite;
 }
+.banniere {
+  background: linear-gradient(to right, #000000cc, #1e1e1ecc);
+  color: #fff;
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+}
+
+.texte-defilante {
+  display: flex;
+  width: max-content;
+  animation: defilement 30s linear infinite;
+  will-change: transform;
+}
+
+.texte-defilante span {
+  white-space: nowrap;
+  padding-right: 100px; /* espace entre les deux textes */
+  font-size: 1.2em;
+}
+
+@keyframes defilement {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+//
 
 .nav-links {
   max-height: 0;
