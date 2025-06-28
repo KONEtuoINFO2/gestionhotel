@@ -101,6 +101,9 @@ section h2 {
   transform: translateY(-50%);
   animation: defilement 20ms linear infinite;
 }
+.texte-defilant {
+  will-change: transform;
+}
 .nav-links {
   max-height: 0;
   overflow: hidden;
