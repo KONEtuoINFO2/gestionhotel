@@ -57,7 +57,7 @@ function submitLoginForm() {
     document.getElementById('actived').style.display = 'block';
     document.getElementById('actived').style.color = 'red';
     document.getElementById('openLoginPopup').style.display = 'none';
-    
+    console.log("tuo");
     }
     fetch('http://localhost:3000/login', {
         method: 'POST',
