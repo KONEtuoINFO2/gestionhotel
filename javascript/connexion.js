@@ -43,7 +43,6 @@ function submitLoginForm() {
     alert('vous allez activé le bouton admin');
     // Simulez l'envoi du formulaire de connexion
      document.getElementById('loginPopup').style.display = 'none';
-     document.getElementById('overlay').style.display = 'none';
     document.getElementById('actived').style.display = 'block';
     document.getElementById('actived').style.color = 'red';
     document.getElementById('actived-admin').style.display = 'block';
@@ -53,7 +52,6 @@ function submitLoginForm() {
      // Simulez l'envoi du formulaire de connexion
      alert('Formulaire de connexion soumis');
      document.getElementById('loginPopup').style.display = 'none';
-     document.getElementById('overlay').style.display = 'none';
     document.getElementById('actived').style.display = 'block';
     document.getElementById('actived').style.color = 'red';
     document.getElementById('openLoginPopup').style.display = 'none';
@@ -83,6 +81,10 @@ document.getElementById('openLoginPopup').addEventListener('click', function() {
 
 // Fermeture du popup de connexion
 document.getElementById('closeLoginPopup').addEventListener('click', function() {
+    document.getElementById('loginPopup').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+});
+document.getElementById('closeLoginPopupf').addEventListener('click', function() {
     document.getElementById('loginPopup').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
 });
