@@ -183,9 +183,10 @@ header {
 /* ========= reservation ========= */  
 .reservation {
   display:none;
-  top: 5px;;
+  margin-top: 0%;
   position: fixed;
   background-color: #fff;
+  z-index: 1000;
   padding: 40px 20px;
   max-width: 600px;
   margin: 40px auto;
