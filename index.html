@@ -20,11 +20,8 @@
 <header>
   <h1>Bienvenue à l’Hôtel Royal du Kafigue</h1>
   <p>Votre confort, notre priorité</p>
-  <div class="banniere">
+   <div class="banniere">
   <div class="texte-defilante">
-    <span>
-      Découvrez l'hôtel royal du kafigue situé au cœur du Kafigue à Sakplélé, 20 km de Sirasso: L'Hôtel Royal du Kafigue vous accueille dans un cadre chaleureux et raffiné. Profitez de nos chambres confortable, de notre restaurant gastronomique et de nos services personnalisé pour un séjour inoubliable. &nbsp;&nbsp;&nbsp;&nbsp;
-    </span>
     <span>
       Découvrez l'hôtel royal du kafigue situé au cœur du Kafigue à Sakplélé, 20 km de Sirasso: L'Hôtel Royal du Kafigue vous accueille dans un cadre chaleureux et raffiné. Profitez de nos chambres confortable, de notre restaurant gastronomique et de nos services personnalisé pour un séjour inoubliable. &nbsp;&nbsp;&nbsp;&nbsp;
     </span>
@@ -34,8 +31,7 @@
   </div>
 </div>
 </header>
-  
-<nav class="navbar">
+ <nav class="navbar">
   <div class="logo">HRK</div>
 
   <button class="toggle-btn" id="menuToggleBtn" onclick="toggleMenu()"></button>
@@ -55,6 +51,9 @@
 
   <div class="logo right">HRK</div>
 </nav>
+<aside> <button><==</button>Lux <button>==></button></aside>
+<main>
+
 <!--formulaire de reservation-->
 <section class="reservation" id="Form">
    <button  class="close-reservation" id="closeform">&times;</button>
@@ -84,19 +83,20 @@
 <label for="nombre-personnes">Nombre de personnes :
 <input type="number" id="nombre-personnes" name="nombre_personnes" required min="1"></label>
     <label for="message">Message (facultatif) :
-    <textarea id="message" name="message"></textarea></label>
+    <textarea id="message" name="message" rows="2"></textarea></label>
     
     <input type="tel" id="contact-mony" name="contact-mony" placeholder="Entrz votre numero de mony ici si vous voulez regler la facture dès la reservation .">
     <ol style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; margin-top: 0px; padding-bottom: 1px;">
       <button style="background-image: url('./fileimages/img-money/imd-om.png'); padding: 20px 25px;background-repeat: no-repeat; border: 2px solid black;"><input  type="radio" id="om"name="om"></button>
       <button style="background-image: url('./fileimages/img-money/mtnm.png');  padding: 15px 15px;background-repeat: no-repeat; border: 2px solid orange;"><input  type="radio" id="om"name="om"></button>
       <button style="background-image: url('./fileimages/img-money/img-mvm.png'); padding: 15px 20px;background-repeat: no-repeat; border: 2px solid black;"><input  type="radio" id="om"name="om"></button>
-      <button style="background-image: url('./fileimages/img-money/waveci.png'); padding:30px 30px;background-repeat: no-repeat; border: 2px solid black;border-radius: 10px;"><input  type="radio" id="om"name="om"></button>
+      <button style="background-image: url('./fileimages/img-money/wavemoney.png'); padding:30px 30px;background-repeat: no-repeat; border: 2px solid black;border-radius: 10px;"><input  type="radio" id="om"name="om"></button>
     </ol>
   
     <button type="submit" class="btn">Valider</button>
   </form>
   <script src="./javascript/reservation.js"></script>
+  <script src="./javascript/javascriptreservation-api.js"></script>
 </section>
 <!-- Formulaire de connexion -->
     
@@ -166,9 +166,11 @@
       <h3>Service Premium</h3>
       <p>Réception 24/7, navette aéroport, service en chambre et accueil personnalisé à votre arrivée.</p>
     </div>
-    <div style="text-align: center; margin-top: 30px;">
-  <a href="javascript:void(0)" id="openFormlaire" style="display: inline-block;  background-color: #8c5100; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Réserver Maintenant</a>
-</div>
+    <div style="background-color: #fff; padding: 20px; max-width: 300px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+      <h3>Service Premium</h3>
+      <p>Réception 24/7, navette aéroport, service en chambre et accueil personnalisé à votre arrivée.</p>
+    </div>
+    
 
  </section>
 
@@ -180,12 +182,7 @@
     <img src="./fileimages/images-a/chambre simple03.webp" alt="Réception chaleureuse" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
     <img src="./fileimages/images-a/chambre simple04.jpg" alt="Réception chaleureuse" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
   </div>
-  <div style="text-align: center; margin-top: 20px;">
-    <a href="javascript:void(0)" onclick="document.getElementById('Form').style.display='block'" 
-       style="display: inline-block; background-color: #8c5100; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">
-      Réserver Maintenant
-    </a>
-  </div>
+  
 </section>
 <section id="galerie">
   <h2>Les Doubles</h2>
@@ -247,25 +244,26 @@
     </a>
   </div>
 </section>
+<h2>Nos picines</h2>
 <section id="galerie">
-  <h2>Nos picines</h2>
+  
   <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-        <img src="./fileimages/images-h/picine01.jpg" alt="Réception chaleureuse" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="./fileimages/images-h/picine01.jpg" alt="Réception chaleureuse" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
     <img src="./fileimages/images-h/picine02.jpg" alt="Chambre confortable" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
     <img src="./fileimages/images-h/picine03.jpg" alt="Restaurant gastronomique" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
     <img src="./fileimages/images-h/picine04.avif" alt="Réception chaleureuse" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
   </div>
 </section>
-<div style="text-align: center; margin-top: 20px;">
+<p style="text-align: center; margin-top: 20px;">
     <a href="javascript:void(0)" onclick="document.getElementById('Form').style.display='block'" 
        style="display: inline-block; background-color: #8c5100; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">
-      Réserver Maintenant
+      Réserver Maintenantddd
     </a>
-  </div>
+  </p>
 <section id="galerie">
   <h2>Espace vert</h2>
   <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-        <img src="./fileimages/images-g/espacevert01.jpg" alt="Réception chaleureuse" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="./fileimages/images-g/espacevert01.jpg" alt="Réception chaleureuse" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
     <img src="./fileimages/images-g/espacevert02.jpg" alt="Chambre confortable" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
     <img src="./fileimages/images-g/espacevert03.jpg" alt="Restaurant gastronomique" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
     <img src="./fileimages/images-g/espacevert04.jpg" alt="Réception chaleureuse" style="width: 300px; border-radius: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
@@ -317,6 +315,10 @@
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15752.947650101756!2d-6.038612758061432!3d9.22309470353734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfb4218178f27dc5%3A0x78e79748778c032b!2zU2Frb3XDqWxsw6k!5e0!3m2!1sfr!2sci!4v1751588288270!5m2!1sfr!2sci" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
+</main>
+<div style="text-align: center; margin-top: 30px; position: fixed;bottom: 5px;right: 5px;">
+  <a href="javascript:void(0)" id="openFormlaire" style="display: inline-block;  background-color: #8c5100; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Réserver Maintenant</a>
+</div>
 <footer style="background-color: #222; color: #fff; padding: 40px 20px; text-align: center;">
   <p style="font-size: 1.2em;"><strong>Hôtel Royal du Kafigue</strong><br>
     Avenue fleuve pôhôtèwe, Sapkélé,Sous-préfecture de Sirasso, Côte d’Ivoire<br>

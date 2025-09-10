@@ -12,4 +12,5 @@ document.getElementById('openFormlaire').addEventListener('click', function() {
 document.getElementById('closeform').addEventListener('click', function() {
     document.getElementById('Form').style.display = 'none';
 });
+
 })

@@ -1,12 +1,11 @@
-/* Style pour les popups */
+/* ---------- STYLE GENERAL POUR LES POPUPS ---------- */
 .popup {
-    display: none; /* Assurez-vous que le popup est initialement masqué */
+    display: none;
     position: fixed;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 5px solid #1abc9c;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     background-color: #1abc9c;
     padding: 20px;
     z-index: 1000;
@@ -16,16 +15,41 @@
     border-radius: 15px;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    font-size: large;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease;
 }
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ---------- BOUTON DE FERMETURE ---------- */
 .popup .close {
     position: absolute;
     top: 10px;
     right: 10px;
+    font-size: 22px;
+    color: #fff;
     cursor: pointer;
 }
+.popup .close:hover {
+    color: #ff4444;
+}
+
+/* ---------- OVERLAY (fond semi-transparent) ---------- */
 .overlay {
-    display: none; /* Assurez-vous que l'overlay est initialement masqué */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -34,39 +58,69 @@
     background-color: rgba(0,0,0,0.5);
     z-index: 500;
 }
-.user-non-active{
+
+/* ---------- ETATS UTILISATEURS ---------- */
+.user-non-active {
     display: block;
 }
+.user-active,
+.user-active-admin {
+    display: none;
+}
 
-.user-active{
-    display: none;
-    }
-.user-active-admin{
-    display: none;
-    }
+/* ---------- FORMULAIRE ---------- */
 .popup form {
     display: flex;
     flex-direction: column;
     border-radius: 3px;
 }
-.popup form label, .popup form input, .popup form button {
+
+.popup form label,
+.popup form input,
+.popup form button {
     width: 100%;
     box-sizing: border-box;
     border-radius: 3px;
-    padding: 1%;
+    padding: 8px;
+    margin-top: 8px;
+    border: none;
 }
+
+/* ---------- STYLE DES CHAMPS INPUT ---------- */
+.popup form input {
+    font-size: 15px;
+}
+
+/* ---------- BOUTON DE VALIDATION ---------- */
 .popup form button {
     margin-top: 10px;
     width: 50%;
-    border-radius: 3px;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    color: #1abc9c;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
 }
+
+.popup form button:hover {
+    background-color: #16a085;
+    color: #fff;
+}
+
+/* ---------- VERSION MOBILE ---------- */
 @media (max-width: 600px) {
     .popup {
         top: 50%;
-        width: 100%;
-        max-width: 50%;
-        padding: 5px;
+        width: 90%;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .popup form button {
+        width: 70%;
     }
 }
