@@ -147,6 +147,39 @@ main{
     padding:0px;
     margin: 0px;
 }
+/* ===== GALERIE IMAGE WRAPPER ===== */
+.galerie-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* ===== IMAGE STYLE ===== */
+.galerie-img {
+  width: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.galerie-img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE: MOBILE ===== */
+@media (max-width: 768px) {
+  .galerie-img {
+    width: 45%; /* Deux colonnes */
+    max-width: 160px;
+    margin: 0 auto;
+  }
+
+  .galerie-images {
+    gap: 10px;
+    justify-content: space-around;
+  }
+}
 
 /* ========= RESPONSIVE: MOBILE ========= */
 @media (max-width: 768px) {
