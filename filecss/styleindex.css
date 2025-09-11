@@ -86,8 +86,19 @@ main{
     align-items: center;
     padding: 20px;
 }
+/* ===== GALERIE SECTION ===== */
+.galerie-section {
+  padding: 20px;
+  text-align: center;
+}
 
-/* ===== GALERIE IMAGE WRAPPER ===== */
+.galerie-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* ===== IMAGE WRAPPER ===== */
 .galerie-images {
   display: flex;
   flex-wrap: wrap;
@@ -110,7 +121,7 @@ main{
 /* ===== RESPONSIVE: MOBILE ===== */
 @media (max-width: 768px) {
   .galerie-img {
-    width: 45%; /* Deux colonnes */
+    width: 45%;
     max-width: 160px;
     margin: 0 auto;
   }
@@ -120,6 +131,8 @@ main{
     justify-content: space-around;
   }
 }
+
+
 /* ========= BANNIERE ========= */
 
 
