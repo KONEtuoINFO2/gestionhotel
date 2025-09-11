@@ -131,6 +131,62 @@ main{
     justify-content: space-around;
   }
 }
+/* ========= pour le bouton horizontal ========= */
+.galerie-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  flex-wrap: wrap;
+}
+
+.nav-items {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.nav-items h4 {
+  margin: 0;
+  padding: 8px 12px;
+  background-color: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-items h4:hover {
+  background-color: #ddd;
+}
+
+.nav-btn {
+  background-color: #8c5100;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 1.2em;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .galerie-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-items {
+    justify-content: center;
+  }
+
+  .nav-btn {
+    width: 100%;
+  }
+}
 
 
 /* ========= BANNIERE ========= */
