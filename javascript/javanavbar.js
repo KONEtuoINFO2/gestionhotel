@@ -18,4 +18,14 @@ function toggleMenu() {
   });
 }
 
+function scrollNav(direction) {
+  const container = document.getElementById('navScroll');
+  const scrollAmount = 100;
+  container.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth'
+  });
+}
+
+
   
